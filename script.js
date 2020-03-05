@@ -218,7 +218,7 @@ submitbtn.addEventListener("click", function(event) {
     finalscore.style.display= "none";
     highscore.style.display= "block";
 
-    var user =  initialinput.value.trim();
+    var user =  initialinput.value.trim() +" : " + score;
     if (user === "") {
         return;
     }
@@ -252,7 +252,7 @@ function renderHighscore() {
         var hscore = hscores[i];
 
         var li = document.createElement("li");
-        li.textContent = hscore + " : " + score;
+        li.textContent = hscore;
 
         highscorelist.appendChild(li);
     
