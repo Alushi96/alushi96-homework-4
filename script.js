@@ -1,13 +1,13 @@
-var secondsDisplay = document.querySelector("#seconds");
-var startbutton = document.querySelector("#b1");
+//Timer
 
+var secondsDisplay = document.querySelector("#seconds");
 var secondsElapsed = 0;
 var totalSeconds = 90;
 var interval;
 
 
 function getFormattedSeconds() {
-    var secondsLeft = (totalSeconds - secondsElapsed) % 100;
+    var secondsLeft = (totalSeconds - secondsElapsed);
 
     var formattedSeconds;
 
@@ -27,6 +27,9 @@ function renderTime() {
     if (secondsElapsed >=totalSeconds) {
         alert("All done!!");
         stopTimer();
+        finalscore.style.display = "block";
+        quiz.style.display = "none";
+        fiscore();
     }
 }
 
@@ -40,10 +43,13 @@ function startTimer() {
     }
 }
 
-function stopTimer() {
-    secondsElapsed = 0;
-    renderTime();
+function subsec(){
+    var subtract = totalSeconds - 10000;
+    console.log("sub")
 }
 
-
-startbutton.addEventListener("click", startTimer);
+function stopTimer() {
+  secondsElapsed = 0;
+    renderTime();
+    clearInterval(interval);
+}

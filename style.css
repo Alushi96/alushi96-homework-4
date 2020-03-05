@@ -1,12 +1,30 @@
 .time {
     float: right;
+    border-top-style: solid;
+    border-right-style: solid;
+    border-bottom-style: solid;
 }
 
 #timer {
     float: right;
+    border-top-style: solid;
+    border-left-style: solid;
+    border-bottom-style: solid;
 }
 
-#question {
+#score {
+    float: right;
+    border-left-style: solid;
+    border-bottom-style: solid;
+    border-top-style: solid;
+}
+
+#scores {
+    float: right;
+    border-right-style: solid;
+}
+
+#questions {
     border-style: solid;
     border-width: 5px;
     border-color: blue;
@@ -32,3 +50,6 @@
 #b4 {
     margin: 4px 0px 4px 0px;
 }
+
+
+
