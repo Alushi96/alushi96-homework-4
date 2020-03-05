@@ -186,3 +186,22 @@ function clearint(){
  },1000);
     
 }
+
+//Start Quiz
+
+function startQuiz() {
+    start.style.display = "none";
+    renderQuestion();
+    startTimer();
+   quiz.style.display = "block";
+}
+start.addEventListener("click",startQuiz);
+
+//Highscores
+
+var finalcore = document.querySelector("#finalcore");
+
+function fiscore() {
+   finalcore.textContent = "Your final score is : " + score;
+    console.log(finalcore);
+}
