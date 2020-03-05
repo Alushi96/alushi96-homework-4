@@ -127,3 +127,62 @@ function renderQuestion() {
     b3.innerHTML = q.b3;
     b4.innerHTML = q.b4;
 }
+
+var scoreDisplay = document.querySelector("#scores");
+var score = 0;
+
+
+//Check Answsers
+
+function checkAnswer(answer) {
+    if (answer == questions[runningQuestion].correct){
+        answerCorrect();
+       console.log("correct");
+    }
+    else {
+        answerWrong();
+        
+        
+    }
+    if (runningQuestion < lastquestion) {
+        runningQuestion++;
+        renderQuestion();    
+    } 
+    else {
+        stopTimer();
+        finalscore.style.display = "block";
+        quiz.style.display = "none";
+        fiscore();
+    }
+}
+
+function answerCorrect() {
+   score++;
+   scoreDisplay.textContent = score;
+   var progs = setTimeout(function() {
+    prog.textContent = "Correct!!";
+}, 200);
+
+clearint();
+   console.log(score);
+}
+
+
+function answerWrong(){
+   var progs = setTimeout(function() {
+        prog.textContent = "Wrong!!";
+    },200);
+
+   clearint();
+
+    subsec();
+    console.log("Wrong");
+    
+}
+
+function clearint(){
+ setTimeout(function() {
+     prog.textContent = "";
+ },1000);
+    
+}
