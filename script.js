@@ -205,3 +205,68 @@ function fiscore() {
    finalcore.textContent = "Your final score is : " + score;
     console.log(finalcore);
 }
+
+//Submit
+
+var initialinput = document.querySelector("#initials");
+var submitbtn = document.querySelector("#submit");
+
+
+submitbtn.addEventListener("click", function(event) {
+    event.preventDefault();
+    head.style.display= "none";
+    finalscore.style.display= "none";
+    highscore.style.display= "block";
+
+    var user =  initialinput.value.trim();
+    if (user === "") {
+        return;
+    }
+
+    hscores.push(user);
+    initialinput.value = "";
+    
+    console.log(user)
+
+    storeName();
+    renderHighscore();
+})
+
+//Save to Storage
+
+function storeName() {
+    localStorage.setItem("user", JSON.stringify(hscores));
+}
+
+//Bring from storage
+
+var highscorelist = document.querySelector("#highscorelist");
+var hscores = [];
+init();
+
+function renderHighscore() {
+    
+    highscorelist.innerHTML = "";
+
+    for (var i = 0; i < hscores.length; i++) {
+        var hscore = hscores[i];
+
+        var li = document.createElement("li");
+        li.textContent = hscore + " : " + score;
+
+        highscorelist.appendChild(li);
+    
+    }
+}
+
+
+function init() {
+    var storeduser = JSON.parse(localStorage.getItem("user"));
+
+    if (storeduser !==null) {
+        hscores = storeduser;
+
+
+        renderHighscore();
+    }
+}
