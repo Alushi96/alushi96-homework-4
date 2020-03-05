@@ -270,3 +270,36 @@ function init() {
         renderHighscore();
     }
 }
+
+//Startover Button
+
+var startover = document.querySelector("#back");
+
+startover.addEventListener("click", function() {
+    start.style.display="block";
+    quiz.style.display="none";
+   finalscore.style.display="none";
+    head.style.display="block";
+    highscore.style.display="none";
+    stopTimer();
+    clear();
+    score = 0;
+})
+
+function clear() {
+    scoreDisplay.textContent = 0;
+    runningQuestion = 0;
+}
+
+
+//Clear Name Button
+
+var clearbtn = document.querySelector("#clear");
+
+clearbtn.addEventListener("click", function() {
+    var element = event.target;
+
+    hscores.splice(hscores);
+    storeName();
+    renderHighscore();
+})
