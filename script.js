@@ -23,6 +23,7 @@ function getFormattedSeconds() {
 
 function renderTime() {
     secondsDisplay.textContent = getFormattedSeconds();
+    
 
     if (secondsElapsed >=totalSeconds) {
         alert("All done!!");
@@ -44,9 +45,10 @@ function startTimer() {
 }
 
 function subsec(){
-    var subtract = totalSeconds - 10000;
+   totalSeconds = totalSeconds - 10;
     console.log("sub")
 }
+
 
 function stopTimer() {
   secondsElapsed = 0;
