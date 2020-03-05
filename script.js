@@ -2,7 +2,7 @@
 
 var secondsDisplay = document.querySelector("#seconds");
 var secondsElapsed = 0;
-var totalSeconds = 90;
+var totalSeconds = 50;
 var interval;
 
 
@@ -52,6 +52,7 @@ function subsec(){
 
 function stopTimer() {
   secondsElapsed = 0;
+  totalSeconds = 50;
     renderTime();
     clearInterval(interval);
 }
