@@ -53,3 +53,17 @@ function stopTimer() {
     renderTime();
     clearInterval(interval);
 }
+
+
+//Highscore Button
+
+var hbtn = document.querySelector("#title");
+hbtn.addEventListener("click", function() {
+    start.style.display="none";
+    quiz.style.display="none";
+   finalscore.style.display="none";
+    head.style.display="none";
+    highscore.style.display="block";
+    init();
+    stopTimer();
+})
